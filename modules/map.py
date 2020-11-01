@@ -6,6 +6,7 @@ class Map:
         self.my_map = []
 
     def creation(self):
+        """Create a double entry table based on the .txt file"""
         with open("map.txt") as generating_file:
             content = []
             for line in generating_file:
@@ -17,6 +18,7 @@ class Map:
             self.my_map = content
 
     def display(self, window):
+        """Use the double entry table to display each picture"""
         number_line = 0
         for line in self.my_map:
             number_case = 0

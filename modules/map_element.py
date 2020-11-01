@@ -3,6 +3,7 @@ import random
 
 
 class MapElement:
+    """Set starting position for the elements Macgyver and Objects"""
     def __init__(self, my_map):
         self.x = 0
         self.y = 0
@@ -13,6 +14,7 @@ class MapElement:
 
 class Macgyver(MapElement):
     def move(self, direction):
+        """Verify available position and change Macgyver position."""
         if direction == "right":
             if self.case_x < 14 and self.my_map[self.case_y][self.case_x + 1] != WALL_SPRITE:
                 if self.case_x + 1 <= NUMBER_SPRITE_SIDE - 1:
@@ -37,6 +39,7 @@ class Macgyver(MapElement):
 
 class Object(MapElement):
     def randomize_position(self):
+        """Generate a random position for objects"""
         while self.my_map[self.case_y][self.case_x] != "X":
             self.case_x = random.randint(0, 14)
             self.case_y = random.randint(0, 14)

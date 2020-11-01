@@ -3,11 +3,13 @@ import pygame
 
 pygame.display.init()
 pygame.display.set_mode()
+""" Set the window parameters"""
 NUMBER_SPRITE_SIDE = 15
 NUMBER_SPRITE_HEIGHT = 15
 SIZE_SPRITE = 42
 SIDE_WINDOW = NUMBER_SPRITE_SIDE * SIZE_SPRITE
 HEIGHT_WINDOW = NUMBER_SPRITE_HEIGHT * SIZE_SPRITE
+"""Set the pictures parameters"""
 WALL = pygame.image.load("ressources/wall.png").convert()
 GUARDIAN = pygame.image.load("ressources/Gardien.png").convert_alpha()
 MACGYVER = pygame.image.load("ressources/MacGyver.png").convert_alpha()

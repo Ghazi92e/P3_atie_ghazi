@@ -12,6 +12,7 @@ window.blit(HOME, (0, 0))
 
 
 def init_items(my_map):
+    """Generate multiple objects at different positions"""
     obj1 = Object(my_map)
     obj1.randomize_position()
     obj2 = Object(my_map)
@@ -24,6 +25,7 @@ def init_items(my_map):
 
 class Appgame:
     def game(self):
+        """Main function"""
         play_game = 1
         while play_game:
             pygame.display.flip()
