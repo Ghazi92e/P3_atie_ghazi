@@ -1,8 +1,8 @@
 import pygame
 
-from modules import constantes
+from modules import constants
 from pygame.locals import *
-from modules.constantes import FOND, MACGYVER, OBJECT1, SIZE_SPRITE, OBJECT2, OBJECT3, GUARDIAN_SPRITE, SIDE_WINDOW, \
+from modules.constants import FOND, MACGYVER, OBJECT1, SIZE_SPRITE, OBJECT2, OBJECT3, GUARDIAN_SPRITE, SIDE_WINDOW, \
     HEIGHT_WINDOW, HOME
 from modules.map import Map
 from modules.map_element import Object, Macgyver

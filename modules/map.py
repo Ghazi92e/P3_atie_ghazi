@@ -1,4 +1,4 @@
-from modules.constantes import SIZE_SPRITE, WALL, GUARDIAN, WALL_SPRITE, GUARDIAN_SPRITE
+from modules.constants import SIZE_SPRITE, WALL, GUARDIAN, WALL_SPRITE, GUARDIAN_SPRITE
 
 
 class Map:
@@ -18,7 +18,7 @@ class Map:
             self.my_map = content
 
     def display(self, window):
-        """Use the double entry table to display each picture"""
+        """Use the double entry table to display wall sprite and guardian sprite"""
         number_line = 0
         for line in self.my_map:
             number_case = 0

@@ -1,4 +1,4 @@
-from modules.constantes import NUMBER_SPRITE_SIDE, SIZE_SPRITE, WALL_SPRITE
+from modules.constants import NUMBER_SPRITE_SIDE, SIZE_SPRITE, WALL_SPRITE
 import random
 
 
