@@ -1,4 +1,4 @@
-#**Help MacGyver to escape**#
+**Help MacGyver to escape !**
 
 A maze game whose goal is to help MacGyver escape by collecting 3 objects: a needle, a plastic tube and ether to be able to make a syringe and put the guardian to sleep! This game was made thanks to pygame.
 
@@ -17,3 +17,8 @@ The main features of this program are: -There is only one level. The structure (
 -The program stops only if MacGyver has successfully retrieved all the objects and found the exit of the labyrinth. If he does not have all the items and he appears in front of the guard, he dies (life is cruel for the heroes).
 
 -The program will be standalone, that is to say that it can be executed on any computer.
+
+
+##
+To install the game
+##
