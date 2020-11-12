@@ -1,4 +1,4 @@
-Help MacGyver escape!
+__underscores__Help MacGyver escape#titre
 
 A maze game whose goal is to help MacGyver escape by collecting 3 objects: a needle, a plastic tube and ether to be able to make a syringe and put the guardian to sleep! This game was made thanks to pygame.
 
