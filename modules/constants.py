@@ -20,4 +20,4 @@ FOND = pygame.image.load("ressources/fond.jpg").convert()
 HOME = pygame.image.load("ressources/Home.png").convert()
 WALL_SPRITE = "M"
 GUARDIAN_SPRITE = "G"
-
+MACGYVER_SPRITE = "P"
