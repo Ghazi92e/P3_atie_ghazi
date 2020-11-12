@@ -23,4 +23,24 @@ The main features of this program are: -There is only one level. The structure (
 To install the game
 ##
 
-1. Clone the repo 
+1. Clone the repository: "git clone https://github.com/Ghazi92e/P3_atie_ghazi.git"
+2. Create a virtual env: "python -m venv env" 
+3. Activate the virtual env: "env\Scripts\activate"
+4. Install packages for requirements.txt: "pip install -r requirements.txt"
+5. In the folder "\P3_atie_ghazi" create a file setup.py with this configuration: 
+```
+from cx_Freeze import setup, Executable
+
+setup(
+    name="MacgyverGame",
+    options={"build_exe": {"packages": ["pygame"],
+                           "include_files": ["ressources",
+                                             "modules", "map.txt"]}},
+    description="Game MacGyver",
+    executables=[Executable("main.py")],
+)
+```
+6. Compile with this commande: "python.exe setup.py build"
+7. Open the folder build -> exe.win-amd64-3.8 and double click on main.exe
+
+**Enjoy !!** 
