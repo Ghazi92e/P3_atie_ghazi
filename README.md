@@ -20,7 +20,7 @@ The main features of this program are: -There is only one level. The structure (
 
 
 ##
-To install the game
+**To install MacGyver game**
 ##
 
 1. Clone the repository: "git clone https://github.com/Ghazi92e/P3_atie_ghazi.git"
@@ -40,7 +40,7 @@ setup(
     executables=[Executable("main.py")],
 )
 ```
-6. Compile with this commande: "python.exe setup.py build"
+6. Compile with this command: "python.exe setup.py build"
 7. Open the folder build -> exe.win-amd64-3.8 and double click on main.exe
 
 **Enjoy !!** 
