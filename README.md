@@ -22,3 +22,5 @@ The main features of this program are: -There is only one level. The structure (
 ##
 To install the game
 ##
+
+1. Clone the repo 
