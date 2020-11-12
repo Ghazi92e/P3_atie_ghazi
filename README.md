@@ -1,19 +1,19 @@
-Aider MacGyver à s'échapper !
+Help MacGyver escape!
 
-Un jeu de labyrinthe dont le but est d'aider MacGyver à s'echapper en reunissant 3 objet : une aiguille, un tube en plastique et de l'ether pour pouvoir fabriquer une seringue et endormir le gardien ! Ce jeux a été realisé grâce à pygame.
+A maze game whose goal is to help MacGyver escape by collecting 3 objects: a needle, a plastic tube and ether to be able to make a syringe and put the guardian to sleep! This game was made thanks to pygame.
 
-Les principales fonctionnalités de ce programme sont les suivantes : -Il n'y a qu'un seul niveau. La structure (départ, emplacement des murs, arrivée), devra être enregistrée dans un fichier pour la modifier facilement au besoin.
+The main features of this program are: -There is only one level. The structure (start, location of the walls, finish) should be saved in a file to easily modify it if necessary.
 
--MacGyver sera contrôlé par les touches directionnelles du clavier.
+-MacGyver will be controlled by the directional keys on the keyboard.
 
--Les objets seront répartis aléatoirement dans le labyrinthe et changeront d’emplacement si l'utilisateur ferme le jeu et le relance.
+-The objects will be distributed randomly in the maze and will change location if the user closes the game and relaunches it.
 
--La fenêtre du jeu sera un carré pouvant afficher 15 sprites sur la longueur.
+-The game window will be a square that can display 15 sprites in length.
 
--MacGyver devra donc se déplacer de case en case, avec 15 cases sur la longueur de la fenêtre !
+-MacGyver will therefore have to move from square to square, with 15 squares along the length of the window!
 
--Il récupèrera un objet simplement en se déplaçant dessus.
+-It will pick up an item simply by moving over it.
 
--Le programme s'arrête uniquement si MacGyver a bien récupéré tous les objets et trouvé la sortie du labyrinthe. S'il n'a pas tous les objets et qu'il se présente devant le garde, il meurt (la vie est cruelle pour les héros).
+-The program stops only if MacGyver has successfully retrieved all the objects and found the exit of the labyrinth. If he does not have all the items and he appears in front of the guard, he dies (life is cruel for the heroes).
 
--Le programme sera standalone, c'est-à-dire qu'il pourra être exécuté sur n'importe quel ordinateur.
+-The program will be standalone, that is to say that it can be executed on any computer.
