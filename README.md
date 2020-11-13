@@ -26,7 +26,7 @@ The main features of this program are: -There is only one level. The structure (
 1. Clone the repository: "git clone https://github.com/Ghazi92e/P3_atie_ghazi.git"
 2. Create a virtual env: "python -m venv env" 
 3. Activate the virtual env: "env\Scripts\activate"
-4. Install packages for requirements.txt: "pip install -r requirements.txt"
+4. Install packages from requirements.txt: "pip install -r requirements.txt"
 5. In the folder "\P3_atie_ghazi" create a file setup.py with this configuration: 
 ```
 from cx_Freeze import setup, Executable
