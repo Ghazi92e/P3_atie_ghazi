@@ -2,7 +2,8 @@
 
 A maze game whose goal is to help MacGyver escape by collecting 3 objects: a needle, a plastic tube and ether to be able to make a syringe and put the guardian to sleep! This game was made thanks to pygame.
 
-The main features of this program are: -There is only one level. The structure (start, location of the walls, finish) should be saved in a file to easily modify it if necessary.
+The main features of this program are:
+-There is only one level. The structure (start, location of the walls, finish) should be saved in a file to easily modify it if necessary.
 
 -MacGyver will be controlled by the directional keys on the keyboard.
 
@@ -26,7 +27,7 @@ The main features of this program are: -There is only one level. The structure (
 1. Clone the repository: "git clone https://github.com/Ghazi92e/P3_atie_ghazi.git"
 2. Create a virtual env: "python -m venv env" 
 3. Activate the virtual env: "env\Scripts\activate"
-4. Install packages for requirements.txt: "pip install -r requirements.txt"
+4. Install packages from requirements.txt: "pip install -r requirements.txt"
 5. In the folder "\P3_atie_ghazi" create a file setup.py with this configuration: 
 ```
 from cx_Freeze import setup, Executable
