@@ -17,10 +17,13 @@ class MapElement:
         self.case_x = 0
         self.case_y = 0
         self.my_map = my_map
-        self.objects = []
 
 
 class Macgyver(MapElement):
+    def __init__(self, my_map):
+        super().__init__(my_map)
+        self.objects = []
+
     def move(self, direction):
         """Verify available position and change Macgyver position"""
         if direction == "right":
@@ -106,6 +109,16 @@ class Macgyver(MapElement):
 
 
 class Object(MapElement):
+    @classmethod
+    def init_items(cls, my_map, obj_count=3):
+        """Generate multiple objects at different positions"""
+        list_objects = []
+        for i in range(obj_count):
+            obj = cls(my_map)
+            obj.randomize_position()
+            list_objects.append(obj)
+        return list_objects
+
     def randomize_position(self):
         """Generate a random position for objects"""
         while self.my_map[self.case_y][self.case_x] != "X":
@@ -114,12 +127,18 @@ class Object(MapElement):
             self.x = self.case_x * SIZE_SPRITE
             self.y = self.case_y * SIZE_SPRITE
 
+
+    """Display the objects
+    @staticmethod
+    def display_objects(images):
+        list_objects = [OBJECT1, OBJECT2, OBJECT3]
+        for i in list_objects:
+            window.blit(i, (images.case_x * SIZE_SPRITE, images.case_y * SIZE_SPRITE))
+    """
+
     """Display the objects"""
     @staticmethod
     def display_objects(obj1, obj2, obj3):
-        window.blit(OBJECT1,
-                    (obj1.case_x * SIZE_SPRITE, obj1.case_y * SIZE_SPRITE))
-        window.blit(OBJECT2,
-                    (obj2.case_x * SIZE_SPRITE, obj2.case_y * SIZE_SPRITE))
-        window.blit(OBJECT3,
-                    (obj3.case_x * SIZE_SPRITE, obj3.case_y * SIZE_SPRITE))
+        window.blit(OBJECT1, (obj1.case_x * SIZE_SPRITE, obj1.case_y * SIZE_SPRITE))
+        window.blit(OBJECT2, (obj2.case_x * SIZE_SPRITE, obj2.case_y * SIZE_SPRITE))
+        window.blit(OBJECT3, (obj3.case_x * SIZE_SPRITE, obj3.case_y * SIZE_SPRITE))
