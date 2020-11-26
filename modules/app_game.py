@@ -1,13 +1,15 @@
 import pygame
 
 from modules.constants import SIDE_WINDOW, HEIGHT_WINDOW, \
-    HOME, FOND, GUARDIAN_SPRITE, OBJECT1, OBJECT2, OBJECT3
+    GUARDIAN_SPRITE, OBJECT1, MACGYVER, OBJECT2, OBJECT3, GUARDIAN, WALL
 from modules.map import Map
 from modules.map_element import Object, Macgyver
 
 window = pygame.display.set_mode((SIDE_WINDOW, HEIGHT_WINDOW))
-window.blit(HOME, (0, 0))
 
+FOND = pygame.image.load("ressources/fond.jpg")
+HOME = pygame.image.load("ressources/Home.png")
+window.blit(HOME, (0, 0))
 
 class Appgame:
     def __init__(self, continue_game):
@@ -17,24 +19,26 @@ class Appgame:
 
     def main_menu(self):
         """Menu game"""
-        play_game = True
         self.continue_game = False
+        play = True
         pygame.display.flip()
-        while play_game:
+        while play:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_SPACE:
-                        play_game = False
+                        play = False
                         self.continue_game = True
 
     def main_game(self):
         """Main game"""
         m = Map()
         m.creation()
-        mc = Macgyver(m.my_map)
-        obj1, obj2, obj3 = Object.init_items(m.my_map)
+        macgyver = MACGYVER
+        mc = Macgyver(m.my_map, macgyver)
+        images = [OBJECT1, OBJECT2, OBJECT3]
+        obj1, obj2, obj3 = Object.init_items(m.my_map, images)
         while self.continue_game:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -53,9 +57,9 @@ class Appgame:
 
                 mc.pick_objects(obj1, obj2, obj3)
                 window.blit(FOND, (0, 0))
-                m.display(window)
-                Object.display_objects(obj1, obj2, obj3)
+                m.display(window, WALL, GUARDIAN)
                 mc.add_mc()
+                Object.display_objects([obj1, obj2, obj3])
                 mc.object_counter()
 
                 if m.my_map[mc.case_x][mc.case_y] == GUARDIAN_SPRITE \

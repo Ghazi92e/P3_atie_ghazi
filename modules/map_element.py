@@ -1,8 +1,6 @@
 import pygame
-
 from modules.constants import SIDE_WINDOW, HEIGHT_WINDOW, WALL_SPRITE, \
-    NUMBER_SPRITE_SIDE, SIZE_SPRITE, MACGYVER, \
-    OBJECT1, OBJECT2, OBJECT3
+    NUMBER_SPRITE_SIDE, SIZE_SPRITE
 import random
 
 window = pygame.display.set_mode((SIDE_WINDOW, HEIGHT_WINDOW))
@@ -11,23 +9,24 @@ window = pygame.display.set_mode((SIDE_WINDOW, HEIGHT_WINDOW))
 class MapElement:
     """Set starting position for the elements Macgyver and Objects"""
 
-    def __init__(self, my_map):
+    def __init__(self, my_map, image):
         self.x = 0
         self.y = 0
         self.case_x = 0
         self.case_y = 0
         self.my_map = my_map
+        self.image = pygame.image.load(image).convert_alpha()
 
 
 class Macgyver(MapElement):
-    def __init__(self, my_map):
-        super().__init__(my_map)
+    def __init__(self, my_map, image):
+        super().__init__(my_map, image)
         self.objects = []
 
     def move(self, direction):
         """Verify available position and change Macgyver position"""
         if direction == "right":
-            if self.case_x < 14 \
+            if self.case_x < NUMBER_SPRITE_SIDE - 1 \
                     and self.my_map[self.case_y][self.case_x + 1] \
                     != WALL_SPRITE:
                 if self.case_x + 1 <= NUMBER_SPRITE_SIDE - 1:
@@ -56,8 +55,7 @@ class Macgyver(MapElement):
                     self.y = self.case_y * SIZE_SPRITE
 
     def add_mc(self):
-        """Display MacGyver sprite on map"""
-        window.blit(MACGYVER, (self.x, self.y))
+        window.blit(self.image, (self.x, self.y))
 
     @property
     def count_object(self):
@@ -110,11 +108,11 @@ class Macgyver(MapElement):
 
 class Object(MapElement):
     @classmethod
-    def init_items(cls, my_map, obj_count=3):
+    def init_items(cls, my_map, images, obj_count=3):
         """Generate multiple objects at different positions"""
         list_objects = []
         for i in range(obj_count):
-            obj = cls(my_map)
+            obj = cls(my_map, images[i])
             obj.randomize_position()
             list_objects.append(obj)
         return list_objects
@@ -123,22 +121,14 @@ class Object(MapElement):
         """Generate a random position for objects"""
         while self.my_map[self.case_y][self.case_x] != "X":
             self.case_x = random.randint(0, 14)
-            self.case_y = random.randint(0, 14)
             self.x = self.case_x * SIZE_SPRITE
+            self.case_y = random.randint(0, 14)
             self.y = self.case_y * SIZE_SPRITE
-
-
-    """Display the objects
-    @staticmethod
-    def display_objects(images):
-        list_objects = [OBJECT1, OBJECT2, OBJECT3]
-        for i in list_objects:
-            window.blit(i, (images.case_x * SIZE_SPRITE, images.case_y * SIZE_SPRITE))
-    """
 
     """Display the objects"""
     @staticmethod
-    def display_objects(obj1, obj2, obj3):
-        window.blit(OBJECT1, (obj1.case_x * SIZE_SPRITE, obj1.case_y * SIZE_SPRITE))
-        window.blit(OBJECT2, (obj2.case_x * SIZE_SPRITE, obj2.case_y * SIZE_SPRITE))
-        window.blit(OBJECT3, (obj3.case_x * SIZE_SPRITE, obj3.case_y * SIZE_SPRITE))
+    def display_objects(objects):
+        for obj in objects:
+            window.blit(obj.image, (obj.case_x * SIZE_SPRITE, obj.case_y * SIZE_SPRITE))
+
+

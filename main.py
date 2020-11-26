@@ -8,3 +8,4 @@ while continue_game:
     start = Appgame(continue_game)
     start.main_menu()
     start.main_game()
+
