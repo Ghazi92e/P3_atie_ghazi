@@ -126,9 +126,8 @@ class Object(MapElement):
             self.y = self.case_y * SIZE_SPRITE
 
     """Display the objects"""
+
     @staticmethod
     def display_objects(objects):
         for obj in objects:
             window.blit(obj.image, (obj.case_x * SIZE_SPRITE, obj.case_y * SIZE_SPRITE))
-
-

@@ -11,6 +11,7 @@ FOND = pygame.image.load("ressources/fond.jpg")
 HOME = pygame.image.load("ressources/Home.png")
 window.blit(HOME, (0, 0))
 
+
 class Appgame:
     def __init__(self, continue_game):
         pygame.init()

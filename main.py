@@ -1,5 +1,3 @@
-import pygame
-
 from modules.app_game import Appgame
 
 """Initialize Appgame in modules app_game"""
